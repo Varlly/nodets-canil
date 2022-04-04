@@ -15,6 +15,7 @@ server.engine('mustache', mustache())
 
 server.use(express.static(path.join(__dirname, '../public')))
 
+// Minhas rotas
 server.use(mainRouters)
 
 server.listen(process.env.PORT)
