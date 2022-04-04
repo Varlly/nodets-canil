@@ -1,4 +1,4 @@
-import express from 'express'
+import express, {Request, Response} from 'express'
 import mustache from 'mustache-express'
 import dotenv from 'dotenv'
 import path from 'path'
@@ -17,6 +17,10 @@ server.use(express.static(path.join(__dirname, '../public')))
 
 // Minhas rotas
 server.use(mainRouters)
+
+server.use((req: Request, res: Response)=>{
+  res.render('pages/404')
+})
 
 server.listen(process.env.PORT)
 
